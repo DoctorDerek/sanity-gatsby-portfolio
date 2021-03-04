@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture,
+  filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
@@ -68,7 +68,7 @@ interface IBlogIndexProps {
 const BlogIndex: React.FC<IBlogIndexProps> = ({ data, location }) => {
   // from  https://www.gatsbyjs.com/plugins/gatsby-plugin-graphql-codegen/
 */
-const IndexPage = (props) => {
+const IndexPage = props => {
   const { data, errors } = props;
 
   if (errors) {
