@@ -17,8 +17,6 @@
     "lerna": "^3.13.1"
   },
   "dependencies": {
-    "gatsby-plugin-graphql-codegen": "^2.7.1",
-    "gatsby-plugin-typescript": "^3.0.0",
-    "typescript": "^4.2.2"
+    "gatsby-plugin-typescript": "^3.0.0"
   }
 }
