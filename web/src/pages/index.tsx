@@ -69,7 +69,7 @@ interface IBlogIndexProps {
 const BlogIndex: React.FC<IBlogIndexProps> = ({ data, location }) => {
   // from  https://www.gatsbyjs.com/plugins/gatsby-plugin-graphql-codegen/
 */
-const IndexPage = (props) => {
+const IndexPage = props => {
   const { data, errors } = props
 
   if (errors) {
