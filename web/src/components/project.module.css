@@ -1,10 +1,11 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
-.root {}
+.root {
+}
 
 .title {
-  composes: responsiveTitle1 from './typography.module.css';
+  composes: responsiveTitle1 from "./typography.module.css";
 }
 
 .mainImage {
@@ -49,7 +50,7 @@
 }
 
 .publishedAt {
-  composes: small from './typography.module.css';
+  composes: small from "./typography.module.css";
   margin: 1.5rem 0 3rem;
   color: var(--color-gray);
 }
@@ -70,7 +71,7 @@
 }
 
 .categoriesHeadline {
-  composes: base from './typography.module.css';
+  composes: base from "./typography.module.css";
   margin: 0.5rem 0 0;
 }
 
@@ -93,6 +94,6 @@
 }
 
 .relatedProjectsHeadline {
-  composes: base from './typography.module.css';
+  composes: base from "./typography.module.css";
   margin: 0.5rem 0 0;
 }
