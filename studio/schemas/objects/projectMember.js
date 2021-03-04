@@ -36,7 +36,7 @@ export default {
         ...data,
         title: data.personName,
         subtitle: data.roles && data.roles.join("/"),
-      };
+      }
     },
   },
-};
+}

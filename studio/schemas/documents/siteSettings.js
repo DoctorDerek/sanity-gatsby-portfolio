@@ -23,7 +23,8 @@ export default {
       name: "description",
       type: "text",
       title: "Description",
-      description: "Describe your portfolio for search engines and social media.",
+      description:
+        "Describe your portfolio for search engines and social media.",
     },
     {
       name: "keywords",
@@ -43,4 +44,4 @@ export default {
       to: [{ type: "person" }],
     },
   ],
-};
+}

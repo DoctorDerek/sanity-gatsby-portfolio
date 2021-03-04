@@ -1,8 +1,8 @@
-import { Link } from "gatsby";
-import React from "react";
-import ProjectPreview from "./project-preview";
+import { Link } from "gatsby"
+import React from "react"
+import ProjectPreview from "./project-preview"
 
-import styles from "./project-preview-grid.module.css";
+import styles from "./project-preview-grid.module.css"
 
 function ProjectPreviewGrid(props) {
   return (
@@ -22,13 +22,13 @@ function ProjectPreviewGrid(props) {
         </div>
       )}
     </div>
-  );
+  )
 }
 
 ProjectPreviewGrid.defaultProps = {
   title: "",
   nodes: [],
   browseMoreHref: "",
-};
+}
 
-export default ProjectPreviewGrid;
+export default ProjectPreviewGrid

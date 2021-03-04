@@ -1,9 +1,9 @@
-import { Link } from "gatsby";
-import React from "react";
-import Icon from "./icon";
-import { cn } from "../lib/helpers";
+import { Link } from "gatsby"
+import React from "react"
+import Icon from "./icon"
+import { cn } from "../lib/helpers"
 
-import styles from "./header.module.css";
+import styles from "./header.module.css"
 
 const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
   <div className={styles.root}>
@@ -12,7 +12,10 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
         <Link to="/">{siteTitle}</Link>
       </div>
 
-      <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
+      <button
+        className={styles.toggleNavButton}
+        onClick={showNav ? onHideNav : onShowNav}
+      >
         <Icon symbol="hamburger" />
       </button>
 
@@ -25,6 +28,6 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
       </nav>
     </div>
   </div>
-);
+)
 
-export default Header;
+export default Header
