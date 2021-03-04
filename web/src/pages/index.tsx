@@ -59,16 +59,7 @@ export const query = graphql`
     }
   }
 `
-/*import { BlogIndexQuery } from '../graphqlTypes'
 
-interface IBlogIndexProps {
-  data: BlogIndexQuery;
-  location: Location;
-}
-
-const BlogIndex: React.FC<IBlogIndexProps> = ({ data, location }) => {
-  // from  https://www.gatsbyjs.com/plugins/gatsby-plugin-graphql-codegen/
-*/
 const IndexPage = (props) => {
   const { data, errors } = props
 
