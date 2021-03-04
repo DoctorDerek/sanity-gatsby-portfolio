@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql, PageProps } from "gatsby"
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
@@ -11,57 +11,63 @@ import ProjectPreviewGrid from "../components/project-preview-grid"
 import SEO from "../components/seo"
 import Layout from "../containers/layout"
 
-export const query = graphql`
-  query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-      title
-      subtitle
-      description
-      keywords
-    }
-    projects: allSanitySampleProject(
-      limit: 6
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
-      edges {
-        node {
-          id
-          mainImage {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
+interface IndexPageProps {
+  errors: any
+}
+
+const IndexPage = (props: PageProps & IndexPageProps) => {
+  // const { data, errors } = props
+  const { errors } = props
+  const data = useStaticQuery<
+    GatsbyTypes.ArchivePageQueryQuery & { site: GatsbyTypes.SanitySiteSettings }
+  >(graphql`
+    query IndexPageQuery {
+      site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+        title
+        subtitle
+        description
+        keywords
+      }
+      projects: allSanitySampleProject(
+        limit: 6
+        sort: { fields: [publishedAt], order: DESC }
+        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      ) {
+        edges {
+          node {
+            id
+            mainImage {
+              crop {
+                _key
+                _type
+                top
+                bottom
+                left
+                right
+              }
+              hotspot {
+                _key
+                _type
+                x
+                y
+                height
+                width
+              }
+              asset {
+                _id
+              }
+              alt
             }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
+            title
+            _rawExcerpt
+            slug {
+              current
             }
-            asset {
-              _id
-            }
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
           }
         }
       }
     }
-  }
-`
-
-const IndexPage = (props) => {
-  const { data, errors } = props
+  `)
 
   if (errors) {
     return (
@@ -86,7 +92,9 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
-      <SEO title={site.title} keywords={site.keywords} />
+      {
+        // <SEO title={site.title} keywords={site.keywords} />
+      }
       <Container>
         <h1>Welcome to {site.title}</h1>
         <p>{site.subtitle}</p>
