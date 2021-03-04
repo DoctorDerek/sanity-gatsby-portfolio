@@ -15,5 +15,8 @@
   },
   "devDependencies": {
     "lerna": "^3.13.1"
+  },
+  "dependencies": {
+    "gatsby-plugin-typescript": "^3.0.0"
   }
 }
