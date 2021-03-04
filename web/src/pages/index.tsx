@@ -69,7 +69,7 @@ interface IBlogIndexProps {
 const BlogIndex: React.FC<IBlogIndexProps> = ({ data, location }) => {
   // from  https://www.gatsbyjs.com/plugins/gatsby-plugin-graphql-codegen/
 */
-const IndexPage = props => {
+const IndexPage = (props) => {
   const { data, errors } = props
 
   if (errors) {
@@ -95,11 +95,7 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <SEO
-        title={site.title}
-        description={site.description}
-        keywords={site.keywords}
-      />
+      <SEO title={site.title} keywords={site.keywords} />
       <Container>
         <h1>Welcome to {site.title}</h1>
         <p>{site.subtitle}</p>
