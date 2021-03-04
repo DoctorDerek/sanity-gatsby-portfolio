@@ -4390,22 +4390,6 @@ type DefaultSEOQueryQuery = { readonly site: Maybe<(
     & { readonly author: Maybe<Pick<SanityPerson, 'name'>> }
   )> };
 
-type IndexPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type IndexPageQueryQuery = { readonly site: Maybe<Pick<SanitySiteSettings, 'title' | 'subtitle' | 'description' | 'keywords'>>, readonly projects: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<SanitySampleProject, 'id' | 'title' | '_rawExcerpt'>
-        & { readonly mainImage: Maybe<(
-          Pick<SanityFigure, 'alt'>
-          & { readonly crop: Maybe<Pick<SanityImageCrop, '_key' | '_type' | 'top' | 'bottom' | 'left' | 'right'>>, readonly hotspot: Maybe<Pick<SanityImageHotspot, '_key' | '_type' | 'x' | 'y' | 'height' | 'width'>>, readonly asset: Maybe<Pick<SanityImageAsset, '_id'>> }
-        )>, readonly slug: Maybe<Pick<SanitySlug, 'current'>> }
-      ) }> } };
-
-type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteTitleQueryQuery = { readonly site: Maybe<Pick<SanitySiteSettings, 'title'>> };
-
 type ProjectTemplateQueryQueryVariables = Exact<{
   id: Scalars['String'];
 }>;
@@ -4428,6 +4412,11 @@ type ProjectTemplateQueryQuery = { readonly sampleProject: Maybe<(
     )>>> }
   )> };
 
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
 type ArchivePageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4439,10 +4428,21 @@ type ArchivePageQueryQuery = { readonly projects: { readonly edges: ReadonlyArra
         )>, readonly slug: Maybe<Pick<SanitySlug, 'current'>> }
       ) }> } };
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type IndexPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+type IndexPageQueryQuery = { readonly site: Maybe<Pick<SanitySiteSettings, 'title' | 'subtitle' | 'description' | 'keywords'>>, readonly projects: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<SanitySampleProject, 'id' | 'title' | '_rawExcerpt'>
+        & { readonly mainImage: Maybe<(
+          Pick<SanityFigure, 'alt'>
+          & { readonly crop: Maybe<Pick<SanityImageCrop, '_key' | '_type' | 'top' | 'bottom' | 'left' | 'right'>>, readonly hotspot: Maybe<Pick<SanityImageHotspot, '_key' | '_type' | 'x' | 'y' | 'height' | 'width'>>, readonly asset: Maybe<Pick<SanityImageAsset, '_id'>> }
+        )>, readonly slug: Maybe<Pick<SanitySlug, 'current'>> }
+      ) }> } };
+
+type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteTitleQueryQuery = { readonly site: Maybe<Pick<SanitySiteSettings, 'title'>> };
 
 type GatsbySanityImageFixedFragment = Pick<SanityImageFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
 
