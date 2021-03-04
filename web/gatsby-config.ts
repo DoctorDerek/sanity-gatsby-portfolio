@@ -1,4 +1,4 @@
-import type { PluginOptions as TypegenPluginOptions } from "gatsby-plugin-typegen/types"
+import { PluginOptions as TypegenPluginOptions } from "gatsby-plugin-typegen/types"
 
 type Plugin =
   | string
