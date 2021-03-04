@@ -29,5 +29,16 @@ module.exports = {
         allExtensions: true, // defaults to false
       },
     },
+    {
+      resolve: "gatsby-plugin-typegen",
+      options: {
+        emitSchema: {
+          "src/__generated__/gatsby-introspection.json": true,
+        },
+        emitPluginDocuments: {
+          "src/__generated__/gatsby-plugin-documents.graphql": true,
+        },
+      },
+    },
   ],
 }
